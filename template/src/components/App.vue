@@ -1,4 +1,4 @@
-<style lang="css" src="../sass/main.css"></style>
+<style lang="sass" src="../sass/main.sass"></style>
 <template lang="jade">
     #app
         router-view.view

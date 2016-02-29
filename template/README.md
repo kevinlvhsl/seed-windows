@@ -6,7 +6,7 @@
 http://s1.intv.com.cn/yao/{{tv}}/{{name}}/index.html#/
 
 ## 线上测服链接
-http://s1.intv.com.cn/yao/{{tv}}/dev_{{name}}/index.html#/
+http://devstatic.myintv.com.cn/yao/{{tv}}/{{name}}/index.html#/
 
 ## Build Setup
 

@@ -1,22 +1,27 @@
-var vue = require('vue-loader')
 var webpack = require('webpack')
+var vue = require('vue-loader')
 var cdn = 'static/'
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 if (process.env.NODE_ENV === 'production') {
     cdn = '//cdnstatic1.myintv.com.cn/yao/{{tv}}/{{name}}/static/'
 } else if(process.env.NODE_ENV === 'dev') {
-    cdn = '//cdnstatic1.myintv.com.cn/yao/{{tv}}/dev_{{name}}/static/'
+    cdn = '//devstatic.myintv.com.cn/yao/{{tv}}/{{name}}/static/'
 }
-cdn = '//cdnstatic1.myintv.com.cn/yao/{{tv}}/{{name}}/static/'
+
 module.exports = {
     entry: './src/main.js',
     output: {
         path: './static',
         publicPath: cdn,
-        filename: 'build.js',
+        filename: 'build.js'
     },
     module: {
+        vue: {
+            loaders: {
+                js: 'babel!eslint'
+            }
+        },
         loaders: [
             {
                 test: /\.vue$/,
@@ -24,7 +29,7 @@ module.exports = {
                 // https://github.com/vuejs/vue-loader#advanced-loader-configuration
                 loader: vue.withLoaders({
                     js: 'babel?optional[]=runtime&loose=all',
-                    // sass: 'style-loader!css-loader!px2rem?remUnit=16&remPrecision=8!autoprefixer-loader?{browsers:["android 4", "iOS 6"]}!sass-loader?indentedSyntax'
+                    sass: 'style-loader!css-loader!px2rem?remUnit=16&remPrecision=8!autoprefixer-loader?{browsers:["android 4", "iOS 6"]}!sass-loader?indentedSyntax'
                 })
             },
             {
@@ -37,7 +42,7 @@ module.exports = {
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
                 loaders: [
-                    'file?name=images/[name].[ext]?v=6',
+                    'file?name=images/[name].[ext]?v=10',
                     // 'file?name=images/[name].[ext]?[sha512:hash:base64:5]',
                     // 'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
                 ]
@@ -46,22 +51,48 @@ module.exports = {
     }
 }
 
-module.exports.plugins = [
-    new webpack.DefinePlugin({
-        'process.env': {
-            NODE_ENV: '"production"'
-        }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false
-        }
-    }),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new HtmlWebpackPlugin({
-            hash: true,
-            inject: false,
-            template: 'template.html',
-            filename: '../index.html'
-    })
-]
+if (process.env.NODE_ENV === 'production') {
+
+    module.exports.plugins = [
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        }),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new HtmlWebpackPlugin({
+                hash: true,
+                inject: false,
+                template: 'template.html',
+                filename: '../index.html'
+        })
+    ]
+} /*else if (process.env.NODE_ENV === 'dev') {
+
+    module.exports.plugins = [
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: 'dev'
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        }),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new HtmlWebpackPlugin({
+                hash: true,
+                inject: false,
+                template: 'template.html',
+                filename: '../index.html'
+        })
+    ]
+}*/ else {
+  module.exports.devtool = '#source-map'
+}

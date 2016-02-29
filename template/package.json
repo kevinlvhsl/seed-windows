@@ -4,14 +4,15 @@
   "description": "intv",
   "main": "index.js",
   "scripts": {
-    "build": "node ../../node_modules/webpack/bin/webpack.js --progress --hide-modules",
-    "build-dev": "webpack ../../node_modules/webpack/bin/webpack.js --progress --hide-modules --config webpack.dev.config.js",
-    "dev": "node ../../node_modules/webpack-dev-server/bin/webpack-dev-server.js -inline -hot --host 0.0.0.0 --port 3000 --quiet & gulp",
-    "release": "bash ./build/release.sh",
-    "release-dev": "bash ./build/release-dev.sh",
-    "test": "npm run unit",
-    "unit": "./node_modules/karma/bin/karma start",
-    "wechat": "bash ./build/pack.sh"
+      "build": "node ../../node_modules/cross-env/bin/cross-env.js NODE_ENV=production webpack --progress --hide-modules",
+      "build-dev": "node ../../node_modules/cross-env/bin/cross-env.js NODE_ENV=dev webpack  --progress --hide-modules",
+      "build-local": "webpack  --progress --hide-modules",
+      "dev": "webpack-dev-server --inline --hot --host 0.0.0.0 --port 3001 --no-info",
+      "release": "bash ./build/release.sh",
+      "release-dev": "bash ./build/release-dev.sh",
+      "test": "npm run unit",
+      "lint": "eslint src/** src/components/* src/views/*",
+      "unit": "./node_modules/karma/bin/karma start"
   },
   "author": "{{author}}",
   "license": "MIT",
