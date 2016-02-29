@@ -1,0 +1,50 @@
+@mixin bg($width, $height, $url)
+    width: rem($width/2)
+    height: rem($height/2)
+    background-image: u($url)
+    background-size: contain
+    background-repeat: no-repeat
+@mixin scroll($top, $bottom)
+    position: absolute
+    top: $top
+    bottom: $bottom
+    left: 0
+    width: 100%
+    overflow-x: hidden
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+@mixin poc($top, $width)
+    position: absolute
+    top: $top + 0px
+    left: (640px - $width) / 4
+@mixin loopPos($canvas-width, $canvas-height, $cont-x, $cont-y, $out-margin, $point-size)
+    $margin-x: ($canvas-width - $cont-x * $point-size - $out-margin * 2) / ($cont-x - 1)
+    $margin-y: ($canvas-height - $cont-y * $point-size - $out-margin * 2) / ($cont-y - 1)
+    position: absolute
+    top: $out-margin
+    left: $out-margin
+    width: $canvas-width - $out-margin * 2
+    height: $canvas-height - $out-margin * 2
+    i
+        position: absolute
+        width: $point-size
+        height: $point-size
+        // top
+        @for $i from 1 through $cont-x
+            &:nth-child(#{$i})
+                left: ($margin-x + $point-size) * ($i - 1)
+                top: 0
+        // right
+        @for $i from ($cont-x + 1) through ($cont-x + $cont-y - 2)
+            &:nth-child(#{$i})
+                top: ($margin-y + $point-size) * ($i - $cont-x)
+                right: 0
+        // bottom
+        @for $i from ($cont-x + $cont-y -1) through (2*$cont-x + $cont-y - 2)
+            &:nth-child(#{$i})
+                right: ($margin-x + $point-size) * ($i - ($cont-x + $cont-y -1))
+                bottom: 0
+        @for $i from (2*$cont-x + $cont-y - 2) through (2*$cont-x + 2*$cont-y - 4)
+            &:nth-child(#{$i})
+                bottom: ($margin-y + $point-size) * ($i - (2*$cont-x + $cont-y - 2))
+                left: 0

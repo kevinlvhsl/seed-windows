@@ -1,0 +1,50 @@
+#cp-explain
+    background-color: #232323
+    color: #878787
+    min-height: 504 - 40px
+    & + .copyright
+        height: 40px
+        line-height: 40px
+    .head
+        padding-top: 24px
+        background: linear-gradient(to bottom, #030000 0%, #810000 100%)
+        display: block
+        display: flex
+        justify-content: center
+        align-items: center
+        .btn-back
+            font-size: 13px
+            color: #e39f9f
+            position: absolute
+            top: 34px
+            left: 12px
+            i
+                display: inline-block
+                padding-right: 3px
+                transform: scaleY(1.5)
+                transform-origin: center
+                vertical-align: 1px
+        .i-logo-zqdn2
+            transform: scale(.6)
+    h2
+        height: 30px
+        line-height: 30px
+        text-align: center
+        color: #fefefe
+        font-size: 14px
+        background: linear-gradient(to bottom, #000 0%, #303030 100%)
+    ul
+        padding: 15px
+        line-height: 1.4
+        li
+            list-style:
+                type: decimal
+                position: outside
+            margin-left: 10px
+            opacity: 0
+            animation: slideDownRetourn 1s forwards
+            @for $i from 1 through 10
+                &:nth-child(#{$i})
+                    animation-delay: .1s * $i
+
+

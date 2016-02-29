@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="dns-prefetch" href="//s1.myintv.com.cn">
+    <link rel="dns-prefetch" href="//cdnstatic1.myintv.com.cn">
+    <link rel="stylesheet" href="//s1.myintv.com.cn/yao/public/css/intv2.css">
+    <title>{{title}}</title>
+</head>
+<body ontouchstart="">
+    <script>document.querySelector('html').style.fontSize = (document.body.clientWidth / 320 * 16 + 'px');</script>
+    <div id="loading" style="background: #fff"><i><b></b><b></b></i></div>
+    <div id="app"></div>
+    <div id="div_subscribe_area"></div>
+    <script src="//wximg.gtimg.com/shake_tv/include/js/jsapi.js"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+    {{#danmu}}
+    <script src="//s1.myintv.com.cn/yao/public/js/lib/av-0.5.1.min.js"></script>
+    <script src="//s1.myintv.com.cn/yao/public/js/lib/AV.realtime.js"></script>
+    {{/danmu}}
+    <script src="//s1.myintv.com.cn/yao/public/js/app/2.0/intv.seed.dev.js"></script>
+    <script src="//s1.myintv.com.cn/inas/inas.js"></script>
+    <script src="static/build.js"></script>
+</body>
+</html>

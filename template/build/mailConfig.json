@@ -1,0 +1,12 @@
+{
+    "user": {
+        "email": "kevinliang@intv.com.cn",
+        "password": "lxj353030799"
+    },
+    "to": [
+        "353030799@qq.com",
+    ],
+    "subject": "微信素材包",
+    "text": "微信素材包",
+    "html": "<b>微信素材包</b>"
+}

@@ -1,0 +1,288 @@
+@keyframes rotate
+    0%
+        opacity: 1
+        transform-origin: center;
+        transform: rotate(0)
+    100%
+        opacity: 1
+        transform-origin: center;
+        transform: rotate(360deg)
+#cp-main
+    position: relative
+    padding-top: 250px
+    .vote
+        position: absolute
+        z-index: 4
+        top: 0
+        left: 0
+        width: 100%
+        height: 255px
+        transition: .5s height
+        text-align: center
+        background:
+            image: u('vote-bg.jpg')
+            repeat: no-repeat
+            position: left top
+            size: 100% auto
+        &.open
+            height: 344px
+            .i-btn-arr-down
+                transform: rotate(180deg)
+            .i-vote-tit
+                opacity: 1
+            .description
+                opacity: 1
+                height: 60px
+        .i-vote-bg-logo
+            @include poc(-10px,330)
+            opacity: 0
+            animation: slideUpRetourn 1s forwards
+        .i-btn-arr-left,
+        .i-btn-arr-right
+            position: absolute
+            top: 140px
+        .i-btn-arr-left
+            left: 5px
+        .i-btn-arr-right
+            right: 5px
+        .project-title
+            color: #e39f9f
+            padding-top: 10px
+        .project-name
+            color: #fff
+            font-size: 14px
+        .tip
+            position: absolute
+            width: 100%
+            text-align: center
+            top: 220px
+            left: 0
+            font-size: 12px
+            color: #e39f9f
+        .logos
+            padding: 32px 10px 0
+            overflow: hidden
+            .i-logo-zqdn
+                float: left
+                opacity: 0
+                animation: slideUpRetourn 1s .5s forwards
+            .i-logo-tuniu
+                opacity: 0
+                float: right
+                margin-top: -4px
+                animation: slideUpRetourn 1s .5s forwards
+        .totalNum
+            position: absolute
+            top: 56px
+            left: 6px
+            width: 92px
+            text-align: center
+            color: #670505
+            .num
+                i
+                    display: inline-block
+                    text-align: center
+                    margin-right: 1px
+                    background: #b4b3b3
+                    border-radius: 2px
+                    width: 11px
+                    height: 14px
+                    line-height: 16px
+                    font-size: 12px
+            p
+                color: #bf6969
+                transform: scale(.8)
+        .players
+            text-align: center
+            margin-top: -5px
+            .player
+                position: relative
+                height: r(300)
+                padding-top: 15px
+                .ava
+                    width: r(168)
+                    height: r(187)
+                    position: relative
+                    z-index: 1
+                    margin: 0 auto
+                    background:
+                        image: u('ava-bg.png')
+                        repeat: no-repeat
+                        position: center
+                        size: 100% auto
+                    i
+                        display: block
+                        width: 100%
+                        height: 100%
+                        background:
+                            repeat: no-repeat
+                            position: center
+                            size: 100% auto
+                .name
+                    color: #fff
+                    font-size: 14px
+                    opacity: .9
+                .vote-btn
+                    position: absolute
+                    top: 48px
+                    width: 84px
+                    height: 33px
+                    line-height: 33px
+                    color: #ffe155
+                    font-size: 14px
+                    font-weight: 800
+                    background:
+                        image: u('vote-btn2.png')
+                        repeat: no-repeat
+                        size: r(168) auto
+                    &:before
+                        content: ""
+                        position: absolute
+                        top: 3px
+                        opacity: 0
+                        width: r(52)
+                        height: r(52)
+                        background:
+                            image: u('i-right.png')
+                            repeat: no-repeat
+                            position: center
+                            size: r(52) auto
+                    &:nth-of-type(1)
+                        left: 52px
+                        text-align: left
+                        padding-left: 30px
+                        &:before
+                            left: 3px
+                    &:nth-of-type(2)
+                        right: 52px
+                        text-align: right
+                        padding-right: 30px
+                        &:before
+                            right: 3px
+                    &.disable
+                        background-position-y: -66px
+                        color: #815335
+                    &.selected
+                        background-position-y: -33px
+                        color: #ffe155
+                        &:before
+                            opacity: 1
+                    &.disable,
+                    &.selected
+                        pointer-events: none
+                        &:active
+                            transform: scale(1)
+        .i-vote-tit
+            margin: 5px auto 8px
+            opacity: 0
+            transition: opacity .5s
+        .description
+            opacity: 0
+            transition: all .5s
+            color: #cbafae
+            text-align: left
+            padding: 0 10px
+            height: 0px
+            overflow-x: hidden
+            overflow-y: auto
+            -webkit-overflow-scrolling: touch
+        .toggle
+            position: absolute
+            bottom: -16px
+            left: 0
+            width: 100%
+            height: 17px
+            text-align: center
+            background:
+                image: u('vote-bg-bottom.png')
+                repeat: no-repeat
+                position: center
+                size: 100% auto
+            .i-btn-arr-down
+                transition: transform .5s
+    .footnav
+        position: relative
+        height: 44px
+        background-color: #0d0d0d
+        display: block
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 20px
+        border-top: 2px solid #434343
+        a
+            display: block
+        .i-download-tuniu-tip
+            position: absolute
+            left: 10px
+            top: -40px
+            pointer-events: none
+            animation: pulse infinite 1s
+        .i-nav-me
+            position: relative
+            em
+                position: absolute
+                top: 6px
+                right: -5px
+                width: 10px
+                height: 10px
+                background-color: #d83322
+                border-radius: 50%
+                animation: bounce infinite 1s
+
+
+    .prize-pop
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 10
+        width: 100%
+        height: 100%
+        background-color: rgba(0,0,0,.8)
+        overflow: hidden
+        backface-visibility: hidden
+        .i-light
+            @include poc(70, 637)
+            opacity: 0
+            animation: rotate infinite linear 2s .5s
+        .inner
+            position: relative
+            text-align: center
+        .title
+            padding-top: 80px
+            margin-bottom: 20px
+            color: #ff8500
+            font-size: 16px
+            line-height: 1.4
+            opacity: 0
+            animation: slideDownRetourn .5s forwards
+        .i-hb-bg
+            color: #cd372c
+            padding: 20px 25px 0
+            font-size: 16px
+            font-weight: 900
+            opacity: 0
+            animation: slideDownRetourn .5s .2s forwards
+        .i-btn-niu
+            margin-top: 30px
+            opacity: 0
+            animation: slideDownRetourn .5s .4s forwards
+        .ad-text
+            margin-top: 40px
+            color: #f25d4d
+            opacity: 0
+            animation: slideDownRetourn .5s .6s forwards
+        .btn-enter
+            opacity: 0
+            animation: slideDownRetourn .5s .8s forwards
+            display: block
+            margin: 30px auto 0
+            width: 120px
+            height: 34px
+            line-height: 34px
+            border-radius: 34px
+            background-color: #d83322
+            color: #fff
+            font-size: 14px
+
+

@@ -1,0 +1,23 @@
+{
+  "schema": {
+    "tv": {
+      "type": "string",
+      "required": true,
+      "label": "电视台拼音缩写"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "label": "节目拼音缩写"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "label": "页面标题"
+    },
+    "author": {
+      "type": "string",
+      "label": "Author"
+    }
+  }
+}

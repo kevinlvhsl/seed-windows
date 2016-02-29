@@ -1,0 +1,43 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "intv",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ../../node_modules/webpack/bin/webpack.js --progress --hide-modules",
+    "build-dev": "webpack ../../node_modules/webpack/bin/webpack.js --progress --hide-modules --config webpack.dev.config.js",
+    "dev": "node ../../node_modules/webpack-dev-server/bin/webpack-dev-server.js -inline -hot --host 0.0.0.0 --port 3000 --quiet & gulp",
+    "release": "bash ./build/release.sh",
+    "release-dev": "bash ./build/release-dev.sh",
+    "test": "npm run unit",
+    "unit": "./node_modules/karma/bin/karma start",
+    "wechat": "bash ./build/pack.sh"
+  },
+  "author": "{{author}}",
+  "license": "MIT",
+  "repository": {},
+  "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "babel-runtime": "^5.8.25",
+    "css-loader": "^0.21.0",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.6.2",
+    "image-webpack-loader": "^1.6.2",
+    "inas": "http://inas-public.myintv.com.cn/toolkit/inas.tgz",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.7.1",
+    "node-sass": "^3.3.3",
+    "precss": "^1.2.3",
+    "px2rem-loader": "^0.1.5",
+    "sass-loader": "^3.0.0",
+    "style-loader": "^0.13.0",
+    "template-html-loader": "0.0.3",
+    "vue-hot-reload-api": "1.2.0",
+    "vue-html-loader": "^1.0.0",
+    "vue-loader": "5.0.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
+  }
+}

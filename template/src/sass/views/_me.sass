@@ -1,0 +1,92 @@
+#cp-me
+    &+.copyright
+        padding-top: 8px
+    .head
+        padding-top: 24px
+        height: 110px
+        background: linear-gradient(to bottom, #030000 0%, #810000 100%)
+        a
+            position: absolute
+            top: 34px
+            color: #e39f9f
+            font-size: 13px
+            i
+                display: inline-block
+                padding-right: 3px
+                transform: scaleY(1.5)
+                vertical-align: 1px
+
+        a.btn-back
+            left: 12px
+        a.btn-explain
+            right: 12px
+        .ava
+            margin: 10px auto 0
+            width: 54px
+            height: 54px
+            border-radius: 50%
+            border: 2px solid #c06d6e
+            background-size: cover
+        .name
+            padding-top: 5px
+            text-align: center
+            color: #d5d5d5
+    .list-title
+        background-color: #000
+        text-align: center
+        line-height: 1.2
+        padding: 7px 0
+        color: #bd3537
+        b
+            color: #B55555
+    .list
+        background-color: #232323
+        min-height: 315px
+        .item
+            display: block
+            display: flex
+            justify-content: center
+            align-items: center
+            border-bottom: 1px solid #474747
+            padding: 10px
+            opacity: 0
+            animation: slideDownRetourn 1s forwards
+            .info
+                flex: 1
+                margin-right: 10px
+            .date
+                color: #7f7f7f
+                transform: scale(.95)
+                transform-origin: left top
+            .name
+                color: #c4c4c4
+            .btn-get
+                display: inline-block
+                width: 55px
+                height: 30px
+                line-height: 30px
+                border-radius: 30px
+                text-align: center
+                color: #f4f4f4
+                background-color: #bd3537
+                &.yet
+                    color: #737373
+                    background-color: #4e4e4e
+                &.overdue
+                    color: #737373
+                    background-color: transparent
+    .add-more
+        display: block
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        height: 33px
+        color: #605f5f
+        padding-top: 5px
+        background: linear-gradient(to bottom, #000 0%, #303030 100%)
+        &.null
+            background: #232323
+        a
+            display: block
+            color: currentColor
