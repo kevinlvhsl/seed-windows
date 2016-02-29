@@ -1,4 +1,4 @@
-# intv seed2.0 vue-cli template
+#  seed2.0 vue-cli for windows template
 
 > auth kevin liang
 
