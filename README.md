@@ -1,5 +1,6 @@
 #  seed2.0 vue-cli for windows template
-
+> 内部搭建专用开发SPA项目的cli模板库。
+  由于vue1.0+jade+sass+webpack 版本不兼容mac和windows，所以单独建一个window模板
 > auth kevin liang
 
 ### Usage
